@@ -7,8 +7,8 @@ import (
 
 func main() {
 	// 传入配置文件, 初始化一个全局对象*FeiShu_Bot
-	app_id := "cli_9e38813f43f1100d"
-	app_secret := "UJmTdIqncSYNrHqYwZNkvfzbNmZ7CjeN"
+	app_id := "cli_9e38xxx..."
+	app_secret := "UJmTdIqncSYNrHxxx..."
 	err := feishu_bot.Init_Feishu(app_id, app_secret)
 	if err != nil {
 		panic(err.Error())
