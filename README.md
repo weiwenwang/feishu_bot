@@ -25,5 +25,8 @@ fmt.Println(chatList[0].Chat_id, chatList[0].Name)
 feishu_bot.SendMessage(chatList[0].Chat_id, "线上报错", `json: cannot unmarshal string into Go struct field post_data.app_pk_id of type int{"app_id":"wxae70dd50db3ab2d7","app_pk_id":"56","remark":"","sql":"select \n  * \nfrom \n  battle_db.battle_wxae70dd50db3ab2d7 \nwhere \n  STR_TO_DATE(CONCAT(y, '-', m, '-', d), '%Y-%m-%d') = '2020-06-24' \nlimit \n  50","uid":"9"}
 2020/06/24 10:50:44.675 [E] [task.go:140]  json: cannot unmarshal string into Go struct field post_data.app_pk_id of type int{"app_id":"wxae70dd50db3ab2d7","app_pk_id":"56","remark":"","sql":"select \n  * \nfrom \n  battle_db.battle_wxae70dd50db3ab2d7 \nwhere \n  STR_TO_DATE(CONCAT(y, '-', m, '-', d), '%Y-%m-%d') = '2020-06-24' and current_score != '' \nlimit \n  50","uid":"9"}`)
 ```
-![WechatIMG4.jpeg](https://i.loli.net/2020/06/28/uXxg39RMsjiEyqd.jpg)
-![WechatIMG3.jpeg](https://i.loli.net/2020/06/28/VdWKn5MmwyqUfYr.jpg)
+
+<figure class="third">
+    <img src="https://i.loli.net/2020/06/28/uXxg39RMsjiEyqd.jpg">
+    <img src="https://i.loli.net/2020/06/28/VdWKn5MmwyqUfYr.jpg">
+</figure>
