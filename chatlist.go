@@ -2,7 +2,6 @@ package feishu_bot
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 type Chat_obj struct {
@@ -53,22 +52,28 @@ type Msg struct {
 	Content  Content `json:"content"`
 }
 
-func (*FeiShu_Bot) SendMessage(chat_id, title, content string) {
+func (*FeiShu_Bot) SendMessage(chat_id string, title string, content []string) {
 	var msg Msg
 	msg.Chat_id = chat_id
 	msg.Msg_type = "post"
-	c := map[string]string{
-		"tag":  "text",
-		"text": content,
-	}
-	ctt1 := make([]map[string]string, 0)
+
 	ctt2 := make([][]map[string]string, 0)
-	ctt1 = append(ctt1, c)
-	ctt2 = append(ctt2, ctt1)
+	for _, v := range content {
+		ctt2 = append(ctt2, getc(v))
+	}
 
 	msg.Content.Post.Zh_ch.Title = title
 	msg.Content.Post.Zh_ch.Content = ctt2
-	a, _ := json.Marshal(msg)
-	Post_r(Get_Send, a)
-	fmt.Println(string(a))
+	content_byte, _ := json.Marshal(msg)
+	Post_r(Get_Send, content_byte)
+}
+
+func getc(raw string) []map[string]string {
+	c := map[string]string{
+		"tag":  "text",
+		"text": raw,
+	}
+	ctt1 := make([]map[string]string, 0)
+	ctt1 = append(ctt1, c)
+	return ctt1
 }
