@@ -26,7 +26,6 @@ feishu_bot.SendMessage(chatList[0].Chat_id, "线上报错", `json: cannot unmars
 2020/06/24 10:50:44.675 [E] [task.go:140]  json: cannot unmarshal string into Go struct field post_data.app_pk_id of type int{"app_id":"wxae70dd50db3ab2d7","app_pk_id":"56","remark":"","sql":"select \n  * \nfrom \n  battle_db.battle_wxae70dd50db3ab2d7 \nwhere \n  STR_TO_DATE(CONCAT(y, '-', m, '-', d), '%Y-%m-%d') = '2020-06-24' and current_score != '' \nlimit \n  50","uid":"9"}`)
 ```
 
+![WechatIMG4.jpeg](https://i.loli.net/2020/06/28/uXxg39RMsjiEyqd.jpg){:width="50%"}
+![WechatIMG3.jpeg](https://i.loli.net/2020/06/28/VdWKn5MmwyqUfYr.jpg){:width="50%"}
 
-<center class="half">
-    <img src="https://img-blog.csdn.net/2018061215200776?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="200"/><img src="https://img-blog.csdn.net/20180612152032532?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="200"/><img src="https://img-blog.csdn.net/20180612152100203?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="200"/>
-</center>
