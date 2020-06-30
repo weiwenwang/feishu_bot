@@ -5,8 +5,8 @@ import (
 	"github.com/weiwenwang/feishu_bot"
 )
 
-const APP_ID = "your feishu bot app_id"
-const APP_Secret = "your feishu bot app_secret_id"
+const APP_ID = "cli_9e38813f43f1100d"
+const APP_Secret = "UJmTdIqncSYNrHqYwZNkvfzbNmZ7CjeN"
 
 func main() {
 	// 传入配置文件, 初始化一个全局对象*FeiShu_Bot
