@@ -52,7 +52,7 @@ type Msg struct {
 	Content  Content `json:"content"`
 }
 
-func (*FeiShu_Bot) SendMessage(chat_id string, title string, content []string) {
+func (*FeiShu_Bot) SendMessage(chat_id string, title string, content []string) ([]byte, error) {
 	var msg Msg
 	msg.Chat_id = chat_id
 	msg.Msg_type = "post"
@@ -65,7 +65,7 @@ func (*FeiShu_Bot) SendMessage(chat_id string, title string, content []string) {
 	msg.Content.Post.Zh_ch.Title = title
 	msg.Content.Post.Zh_ch.Content = ctt2
 	content_byte, _ := json.Marshal(msg)
-	Post_r(Get_Send, content_byte)
+	return Post_r(Get_Send, content_byte)
 }
 
 func getc(raw string) []map[string]string {
