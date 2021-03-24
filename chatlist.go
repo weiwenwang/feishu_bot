@@ -59,7 +59,7 @@ func (*FeiShu_Bot) SendMessage(chat_id string, title string, content []string) (
 
 	ctt2 := make([][]map[string]string, 0)
 	for _, v := range content {
-		ctt2 = append(ctt2, getc(v))
+		ctt2 = append(ctt2, getc(v, "text"))
 	}
 
 	msg.Content.Post.Zh_ch.Title = title
@@ -68,10 +68,34 @@ func (*FeiShu_Bot) SendMessage(chat_id string, title string, content []string) (
 	return Post_r(Get_Send, content_byte)
 }
 
-func getc(raw string) []map[string]string {
+func (*FeiShu_Bot) SendMessageRichText(chat_id string, title string, content []string, at []string) ([]byte, error) {
+	var msg Msg
+	msg.Chat_id = chat_id
+	msg.Msg_type = "post"
+
+	ctt2 := make([][]map[string]string, 0)
+	for _, v := range at {
+		ctt2 = append(ctt2, getc(v, "at"))
+	}
+
+	for _, v := range content {
+		ctt2 = append(ctt2, getc(v, "text"))
+	}
+
+	msg.Content.Post.Zh_ch.Title = title
+	msg.Content.Post.Zh_ch.Content = ctt2
+	content_byte, _ := json.Marshal(msg)
+	return Post_r(Get_Send, content_byte)
+}
+
+func getc(raw string, tag string) []map[string]string {
+	text := "text"
+	if tag == "at" {
+		text = "user_id"
+	}
 	c := map[string]string{
-		"tag":  "text",
-		"text": raw,
+		"tag": tag,
+		text:  raw,
 	}
 	ctt1 := make([]map[string]string, 0)
 	ctt1 = append(ctt1, c)
